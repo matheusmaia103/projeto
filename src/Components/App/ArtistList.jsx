@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Artist from './Artist';
-import Postel from 'postel';
 
 const List = styled.ul`
     border: 4px solid black;
