@@ -7,6 +7,12 @@ const List = styled.ul`
 
     max-width: 600px;
     padding:10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items:center;
+    flex-wrap: wrap;
 `;
 
 export default function ArtistList ({artists, setQuery}){
@@ -35,11 +41,13 @@ export default function ArtistList ({artists, setQuery}){
     }
 
     return(
-        <List>
+        <>
             <Header/>
-            {uniqueArtists.map(artist => (
-                <Artist artist = {artist} key = {i++} setQuery = {setQuery}/>
-            ))}
-        </List>
+                <List>
+                {uniqueArtists.map(artist => (
+                    <Artist artist = {artist} key = {i++} setQuery = {setQuery}/>
+                ))}
+                </List>
+        </>
     )
 }

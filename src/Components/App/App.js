@@ -48,6 +48,10 @@ const Form = styled.form`
   font-family: 'Poppins';
   font-weight: light;
 
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+
   border-radius: 10px;
   border: 1px solid black;
 
@@ -65,7 +69,7 @@ const Form = styled.form`
     border: none;
     border-radius: 40px;
 
-    width: 100px;
+    width: 80px;
     height: 60px;
 
     cursor: pointer;
@@ -139,10 +143,11 @@ export default function App() {
   }, [musics])
 
   const getMore = link =>{
-    const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
+    /*const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
     const thingProxy = 'http(s)://thingproxy.freeboard.io/fetch/';
     const freeProxy = ' https://www.free-proxy-list.com';
-    const scrapeStack = 'http://api.scrapestack.com/scrape?access_key=853d1e693f881daefeb7879f946efff3&url='
+    */
+   const scrapeStack = 'http://api.scrapestack.com/scrape?access_key=853d1e693f881daefeb7879f946efff3&url='
 
     fetch(scrapeStack+link, {
       "method": "GET",
