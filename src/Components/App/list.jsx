@@ -1,12 +1,26 @@
+import styled from 'styled-components';
+import Music from './Music'
+
+    const StyledList = styled.ul`
+    padding: 0;
+
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+
+    `;
 export default function List  ({ musics }) {
 
+    let i = 0;
+
     return (
-        <ul>{musics.map(music => (
-            <li key = {music.id}>
-                <img src={music.album.cover_medium} alt="img"/>
-                <h1>{music.title}</h1>
-                <audio src={music.preview} controls></audio>
-            </li>
-        ))}</ul>
+        <StyledList>{musics.map(music => (
+                <Music
+                 music = {music}
+                 key = {i++}
+                />
+        ))}
+        </StyledList>
     )
 }
