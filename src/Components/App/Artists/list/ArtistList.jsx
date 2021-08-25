@@ -1,20 +1,9 @@
-import styled from 'styled-components';
-import Artist from './Artist';
+import { List } from './style.js';
+import Artist from '../img/Artist.jsx';
 
-const List = styled.ul`
-    border: 4px solid black;
 
-    max-width: 600px;
-    padding:10px;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items:center;
-    flex-wrap: wrap;
-`;
-
-export default function ArtistList ({artists, setQuery}){
+export default function ArtistList  ({artists, setQuery}){
     let i = 1;
 
     const uniqueArtistsIds = [];

@@ -1,85 +1,12 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import List from './list.jsx';
-import ArtistList from './ArtistList.jsx';
-import {Btn} from './btn.jsx';
-import styled from 'styled-components';
+import List from './Music/list/list.jsx';
+import ArtistList from './Artists/list/ArtistList.jsx';
+//import {Btn} from './btn.jsx';
+import { AppDisplay, Header, Form} from './AppStyles.js'
 import {MagnifyingGlass} from 'phosphor-react';
-
-
-
-const AppDisplay = styled.div`
-color: white;
-background: linear-gradient(
-    90deg,
-    rgba(48, 16, 255, 1) 0%,
-    rgba(100, 115, 255, 1) 100%
-  );
-font-weight: bold;
-font-family: Poppins!important;
-margin-inline: auto;
-
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-`;
-
-const Header = styled.header`
-background: linear-gradient( 
-  71deg
-  ,#b84fdd -7%,#4965f4 49%,#2efb74 119%);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-
-  width: 100%;
-  height: 40vw;
-`;
-
-const Form = styled.form`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  input{
-  font-size: 4vh;
-  font-family: 'Poppins';
-  font-weight: light;
-
-  background-color: rgba(0,0,0,0.4);
-  color: white;
-  border: none;
-
-  border-radius: 10px;
-  border: 1px solid black;
-
-  padding: 6px;
-  padding-left: 8px;
-
-  width: 50vw;
-  max-width: 450px
-  }
-
-  button{
-    color: white;    
-    background-color: rgba(0, 0, 0, 0.4);
-
-    border: none;
-    border-radius: 40px;
-
-    width: 80px;
-    height: 60px;
-
-    cursor: pointer;
-    transition: 0.3s ease-in;
-    
-    :active{
-      transform: scale(0.8)
-    }
-  }
-`;
+import { ThemeProvider, GlobalStyles } from 'styled-components';
+import Nav from './nav/Nav';
 
 
 export default function App() {
@@ -89,7 +16,7 @@ export default function App() {
   const [query, setQuery] = useState('circles');
   const [musics, setMusics] = useState([]);
   const [artists, setArtists] = useState([]);
-  const [next, setNext] = useState('');
+  //const [next, setNext] = useState('');
   const [total, setTotal] = useState(0);
   
   //when form submits it changes the query
@@ -114,7 +41,7 @@ export default function App() {
     console.log(response)
 
     if(response.next){
-      setNext(response.next);
+      //setNext(response.next);
     }
   })
   .catch(err => {
@@ -142,11 +69,12 @@ export default function App() {
     }
   }, [musics])
 
+  /*
   const getMore = link =>{
-    /*const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
+    const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
     const thingProxy = 'http(s)://thingproxy.freeboard.io/fetch/';
     const freeProxy = ' https://www.free-proxy-list.com';
-    */
+    
    const scrapeStack = 'http://api.scrapestack.com/scrape?access_key=853d1e693f881daefeb7879f946efff3&url='
 
     fetch(scrapeStack+link, {
@@ -168,9 +96,10 @@ export default function App() {
       }
     })
   }
-
-  return(
-    <AppDisplay>
+  */
+ return(
+   <AppDisplay>
+     <Nav/>
      <Header>
        <h1>Dreezer App!!</h1>
 
@@ -181,6 +110,7 @@ export default function App() {
       </Form>
     </Header>
 
+
     <ArtistList artists = {artists} setQuery = {setQuery}/>
 
     <p>{`${total} músicas encontradas`}</p>
@@ -189,12 +119,13 @@ export default function App() {
       musics = {musics}
     />
 
+{/*
     <Btn
       getMore = {getMore}
       link = {next}
       text = {'More'}
     />
-
+*/}
    </AppDisplay>
   )
 }
