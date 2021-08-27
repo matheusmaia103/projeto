@@ -1,4 +1,3 @@
-import './App.css';
 import React, { useState, useEffect } from 'react';
 import List from './Music/list/list.jsx';
 import ArtistList from './Artists/list/ArtistList.jsx';
@@ -7,6 +6,7 @@ import { AppDisplay, Header, Form} from './AppStyles.js'
 import {MagnifyingGlass} from 'phosphor-react';
 import { ThemeProvider, GlobalStyles } from 'styled-components';
 import Nav from './nav/Nav';
+import GlobalStyle from './themes/GlobalStyles'
 
 
 export default function App() {
@@ -99,6 +99,8 @@ export default function App() {
   */
  return(
    <AppDisplay>
+    <GlobalStyle/>
+
      <Nav/>
      <Header>
        <h1>Dreezer App!!</h1>
