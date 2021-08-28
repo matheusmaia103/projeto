@@ -1,3 +1,7 @@
+# About this project
+This project is about consuming data from the dreezer API but, this time using `reactjs` and `styled components`. It's still on development
+<a href="https://dreezerapp.netlify.app/">Click here to go to the project's page</a>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
