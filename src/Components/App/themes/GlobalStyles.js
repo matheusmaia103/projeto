@@ -9,6 +9,10 @@ import { createGlobalStyle } from 'styled-components';
     box-sizing: border-box;
     }
 
+    .error{
+        cursor: not-allowed!important;
+    }
+
 
     *{
         box-sizing: border-box;

@@ -2,12 +2,13 @@ import { ToggleSwitch } from 'react-dragswitch';
 import 'react-dragswitch/dist/index.css';
 import { useState } from 'react';
 
-export default function Switcher({themeToggler}) {
 
-    const [checked, setChecked] = useState(true);
+export default function Switcher({themeToggler, theme}) {
+    
+    const [checked, setChecked] = useState(theme);
     const changeHandler = () =>{
+        setChecked(!theme);
         themeToggler();
-        setChecked(!checked);
     }
 
     return (

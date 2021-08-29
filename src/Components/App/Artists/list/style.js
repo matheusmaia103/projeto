@@ -1,24 +1,50 @@
 import styled from "styled-components";
 
-const List = styled.ul`
-    border: 4px solid black;
+const max = '70px';
 
-    max-width: 600px;
+const List = styled.ul`
+    border: 2px solid ${props => props.theme.artistborder};
+    border-radius: 5px;
+
+    max-width: 900px;
     padding:10px;
 
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items:center;
     flex-wrap: wrap;
 
     list-style: none;
     button{
-        background: transparent;
+        background: ${props => props.theme.bgmusic};
         color: ${props => props.theme.color};
-        border: 1px solid black;
         font-family: 'Poppins';
         cursor: pointer;
+        
+        border: 1px solid transparent;
+        border-radius: 50px;
+        padding-left: 0;
+        padding-right: 8px;
+        margin: 2px;
+
+        box-shadow: ${props => props.theme.musicShadow};
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items:center;
+        flex-wrap: wrap;
+
+        img{
+            margin-right: 10px;
+            border: 2px solid transparent;
+            max-width: ${max}!important;
+            max-height: ${max}!important;
+
+            border-radius: ${max};
+            cursor: pointer;
+        }
     }
     *{
         transition: 0s;

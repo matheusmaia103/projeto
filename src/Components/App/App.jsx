@@ -98,18 +98,25 @@ export default function App() {
     })
   }
   */
+ const [theme, setTheme] = useState(false);
 
-  const [theme, setTheme] = useState(false);
+ useEffect(() =>{
+   // eslint-disable-next-line
+   let lastTheme = localStorage.getItem('theme');  
+   if(lastTheme !== true) lastTheme = false;
+   setTheme(lastTheme);
+ }, [])
 
   const themeToggler = () =>{
     setTheme(!theme);
+    localStorage.setItem('theme', !theme)
   }
  return(
-   <ThemeProvider theme={theme ===  true ? light : dark}>
+   <ThemeProvider theme={theme ===  true ? dark : light}>
     <AppDisplay>
       <GlobalStyle/>
 
-      <Nav themeToggler={themeToggler}/>
+      <Nav themeToggler={themeToggler} theme={theme}/>
       <Header>
         <div>
           <h1>Seja bem vindo!</h1>
@@ -130,6 +137,7 @@ export default function App() {
 
       <List
         musics = {musics}
+        setQuery = {setQuery}
       />
 
   {/*

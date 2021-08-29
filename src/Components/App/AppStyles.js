@@ -19,6 +19,7 @@ align-items: center;
 `;
 
 const Header = styled.header`
+padding-top:40px;
 background: linear-gradient( 
   71deg
   ,#b84fdd -7%,#4965f4 49%,#2efb74 119%);
@@ -33,7 +34,7 @@ background: linear-gradient(
 
   min-height:450px;
 
-  color: ${props => props.theme.color}
+  color: white;
 `;
 
 const Form = styled.form`

@@ -6,7 +6,7 @@ const Img = styled.img`
     max-width: ${max}!important;
     max-height: ${max}!important;
 
-    border-radius: 100%;
+    border-radius: ${max};
     cursor: pointer;
 `;
 

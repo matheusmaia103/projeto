@@ -9,14 +9,14 @@ const StyledMusic = styled.li`
     font-weight: lighter;
     transition: 0.3s ease;
 
-    width: 100%!important;
+    width: 90%!important;
     max-width: 800px;
     margin-top: 15px;
+    overflow: hidden;
 
-    box-shadow: ${props => props.theme.musicShadow};
 
     border-radius: 10px;
-    overflow:hidden;
+    box-shadow: ${props => props.theme.musicShadow};
 
     display:flex;
     flex-direction:row;
@@ -24,6 +24,11 @@ const StyledMusic = styled.li`
     align-items: center;
 
     box-sizing: border-box;
+
+    .error{
+        cursor: not-allowed;
+        color: #f74a4a;
+    }
 
     img{
         box-sizing: border-box;
@@ -67,6 +72,15 @@ const StyledMusic = styled.li`
         flex-direction:column;
         justify-content: space-evenly;
         align-items: left;
+
+
+        cite{
+            cursor: pointer;
+
+            :hover{
+                text-decoration: underline 
+            }
+        }
         
         h2{
             width: 100%!important;
@@ -74,6 +88,9 @@ const StyledMusic = styled.li`
         }
     }
 
+    :hover{
+        transform: scale(1.05)
+    }
     `;
 
     export { StyledMusic };

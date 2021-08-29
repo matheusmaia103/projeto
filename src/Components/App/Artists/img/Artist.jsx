@@ -1,6 +1,3 @@
-import  { Img } from './styledArtist.js'
-//import Postel from "postel";
-
 
 export default function Artist({artist, setQuery}){
 
@@ -12,7 +9,7 @@ export default function Artist({artist, setQuery}){
     return (
             <li>
                 <button onClick = {e => searchHandler()}>
-                    <Img src={artist.picture_medium} alt="" />
+                    <img src={artist.picture_medium} alt="" />
                     <h4>{artist.name}</h4>
                 </button>
             </li>

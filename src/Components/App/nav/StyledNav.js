@@ -7,21 +7,32 @@ export const navBar = styled.nav`
     background-color: darkblue;
 `;
 
-const imgSize = '50px'
+const imgSize = '50px';
+
+window.addEventListener('scroll', function(){
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('shadow', window.scrollY > 0);
+})
 
 export const Bar = styled.nav`
 
     background-color: ${props => props.theme.bgcolor};
     color: ${props => props.theme.color};
     text-align: left;
+    font-size: 30px;
 
     width: 100%;
     padding: 15px 5px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    right:0;
+    left: 0;
+
+    box-shadow: ${props => props.theme.navShadow};
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 30px;
 
     img{
         max-width:${imgSize};
