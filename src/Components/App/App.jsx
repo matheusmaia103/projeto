@@ -4,7 +4,7 @@ import ArtistList from './Artists/list/ArtistList.jsx';
 //import {Btn} from './btn.jsx';
 import { AppDisplay, Header, Form} from './AppStyles.js'
 import {MagnifyingGlass} from 'phosphor-react';
-import { ThemeProvider, GlobalStyles } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import { dark, light } from './themes/all'
 import Nav from './nav/Nav';
 import GlobalStyle from './themes/GlobalStyles'
@@ -105,7 +105,7 @@ export default function App() {
     setTheme(!theme);
   }
  return(
-   <ThemeProvider theme={theme ==  true ? light : dark}>
+   <ThemeProvider theme={theme ===  true ? light : dark}>
     <AppDisplay>
       <GlobalStyle/>
 

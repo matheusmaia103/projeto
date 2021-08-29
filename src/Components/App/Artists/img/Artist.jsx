@@ -1,7 +1,5 @@
-import  { Img, Tooltip, Button } from './styledArtist.js'
-import Postel from "postel";
-import {MagnifyingGlass} from 'phosphor-react';
-
+import  { Img } from './styledArtist.js'
+//import Postel from "postel";
 
 
 export default function Artist({artist, setQuery}){
