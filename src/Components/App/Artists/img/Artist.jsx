@@ -4,9 +4,9 @@ import  { Img } from './styledArtist.js'
 
 export default function Artist({artist, setQuery}){
 
-    const searchHandler = e =>{
+    /*const searchHandler = e =>{
         setQuery(artist.name);
-    }
+    }*/
 
 
     return (
