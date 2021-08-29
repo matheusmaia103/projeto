@@ -10,6 +10,7 @@ background: ${props => props.theme.bgcolor};
 font-weight: bold;
 font-family: Poppins!important;
 margin-inline: auto;
+overflow:hidden;
 
 display: flex;
 flex-direction: column;

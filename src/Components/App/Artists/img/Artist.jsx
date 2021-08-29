@@ -4,14 +4,14 @@ import  { Img } from './styledArtist.js'
 
 export default function Artist({artist, setQuery}){
 
-    /*const searchHandler = e =>{
+    const searchHandler = e =>{
         setQuery(artist.name);
-    }*/
+    }
 
 
     return (
             <li>
-                <button>
+                <button onClick = {e => searchHandler()}>
                     <Img src={artist.picture_medium} alt="" />
                     <h4>{artist.name}</h4>
                 </button>

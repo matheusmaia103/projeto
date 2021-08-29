@@ -12,6 +12,14 @@ const List = styled.ul`
     align-items:center;
     flex-wrap: wrap;
 
+    list-style: none;
+    button{
+        background: transparent;
+        color: ${props => props.theme.color};
+        border: 1px solid black;
+        font-family: 'Poppins';
+        cursor: pointer;
+    }
     *{
         transition: 0s;
     }
