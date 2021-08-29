@@ -5,6 +5,7 @@ import ArtistList from './Artists/list/ArtistList.jsx';
 import { AppDisplay, Header, Form} from './AppStyles.js'
 import {MagnifyingGlass} from 'phosphor-react';
 import { ThemeProvider, GlobalStyles } from 'styled-components';
+import { dark, light } from './themes/all'
 import Nav from './nav/Nav';
 import GlobalStyle from './themes/GlobalStyles'
 
@@ -97,37 +98,48 @@ export default function App() {
     })
   }
   */
+
+  const [theme, setTheme] = useState(false);
+
+  const themeToggler = () =>{
+    setTheme(!theme);
+  }
  return(
-   <AppDisplay>
-    <GlobalStyle/>
+   <ThemeProvider theme={theme ==  true ? light : dark}>
+    <AppDisplay>
+      <GlobalStyle/>
 
-     <Nav/>
-     <Header>
-       <h1>Dreezer App!!</h1>
+      <Nav themeToggler={themeToggler}/>
+      <Header>
+        <div>
+          <h1>Seja bem vindo!</h1>
+          <h3>Descubra novas músicas e cantores</h3>
+        </div>
 
-        <Form
-        onSubmit = {e => submitHandler(e)} >
-          <input type="text" value={inputText} onChange={e => setInputText(e.target.value)}/>
-          <button type='submit'><MagnifyingGlass size={48} /></button>
-      </Form>
-    </Header>
+          <Form
+          onSubmit = {e => submitHandler(e)} >
+            <input type="text" value={inputText} onChange={e => setInputText(e.target.value)}/>
+            <button type='submit'><MagnifyingGlass size={48} /></button>
+        </Form>
+      </Header>
 
 
-    <ArtistList artists = {artists} setQuery = {setQuery}/>
+      <ArtistList artists = {artists} setQuery = {setQuery}/>
 
-    <p>{`${total} músicas encontradas`}</p>
+      <p>{`${total} músicas encontradas`}</p>
 
-    <List
-      musics = {musics}
-    />
+      <List
+        musics = {musics}
+      />
 
-{/*
-    <Btn
-      getMore = {getMore}
-      link = {next}
-      text = {'More'}
-    />
-*/}
-   </AppDisplay>
+  {/*
+      <Btn
+        getMore = {getMore}
+        link = {next}
+        text = {'More'}
+      />
+  */}
+    </AppDisplay>
+   </ThemeProvider>
   )
 }

@@ -4,8 +4,8 @@ import styled from "styled-components";
 const imageSize = '20vh';
 
 const StyledMusic = styled.li`
-    background-color: #1f1e1eda;
-    color: white;
+    background-color: ${props => props.theme.bgmusic};
+    color: ${props => props.theme.musicColor};
     font-weight: lighter;
     transition: 0.3s ease;
 
@@ -13,6 +13,7 @@ const StyledMusic = styled.li`
     max-width: 800px;
     margin-top: 15px;
 
+    box-shadow: ${props => props.theme.musicShadow};
 
     border-radius: 10px;
     overflow:hidden;

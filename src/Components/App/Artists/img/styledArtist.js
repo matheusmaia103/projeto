@@ -26,6 +26,7 @@ const Button = styled.button`
     font-family: 'Poppins';
     font-size: 15px;
 
+
     *{
         pointer-events:none;
     }

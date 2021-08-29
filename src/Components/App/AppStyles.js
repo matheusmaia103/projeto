@@ -5,12 +5,8 @@ import styled from "styled-components";
 const AppDisplay = styled.div`
 width: 100%!important;
 height: 100%!important;
-color: white;
-background: linear-gradient(
-    90deg,
-    rgba(48, 16, 255, 1) 0%,
-    rgba(100, 115, 255, 1) 100%
-  );
+color: ${props => props.theme.color};
+background: ${props => props.theme.bgcolor};
 font-weight: bold;
 font-family: Poppins!important;
 margin-inline: auto;
@@ -29,9 +25,14 @@ background: linear-gradient(
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  text-align: center;
 
   width: 100%;
-  height: 40vw;
+  height: 35vw;
+
+  min-height:450px;
+
+  color: ${props => props.theme.color}
 `;
 
 const Form = styled.form`
@@ -39,34 +40,39 @@ const Form = styled.form`
   justify-content: center;
   align-items: center;
 
+  border: 3px solid white;
+  border-radius: 40px;
+  overflow: hidden;
+
+  background: #1313139c;
+
   input{
   font-size: 4vh;
   font-family: 'Poppins';
   font-weight: light;
 
-  background-color: rgba(0,0,0,0.4);
+  background-color: transparent;
   color: white;
-  border: none;
-
+  
   border-radius: 10px;
-  border: 1px solid black;
-
+  border: none;
+  
   padding: 6px;
   padding-left: 8px;
 
   width: 50vw;
-  max-width: 450px
+  max-width: 450px;
   }
 
   button{
     color: white;    
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: transparent;
 
     border: none;
-    border-radius: 40px;
+    border-radius: 20px;
 
     width: 80px;
-    height: 60px;
+    height: 55px;
 
     cursor: pointer;
     transition: 0.3s ease-in;

@@ -11,6 +11,10 @@ const List = styled.ul`
     justify-content: space-evenly;
     align-items:center;
     flex-wrap: wrap;
+
+    *{
+        transition: 0s;
+    }
 `;
 
 export { List };

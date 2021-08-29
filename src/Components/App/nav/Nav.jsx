@@ -1,14 +1,24 @@
-import { Bar, Global }  from './StyledNav.js';
+import { Bar, Flex }  from './StyledNav.js';
+import logo from './logo.png';
+import Switcher from './themeSwitcher/switcher'
+import {Sun, Moon} from 'phosphor-react';
 
-export default function Nav () {
+export default function Nav ({themeToggler}) {
 
     return(
          <>
-               <Bar 
-               onMouseOver = {e => e.target.classList.add('hovered')}
-               onMouseLeave = {e => e.target.classList.remove('hovered')}
-               >
-                    dreezer
+               <Bar>
+                    <Flex>
+                         <img src={logo} alt="" />
+                         dreezer
+                    </Flex>
+
+                    <Flex>
+                         <Sun size={25}/>
+                         <Switcher themeToggler={themeToggler}/>
+                         <Moon size={25}/>
+                    </Flex>
+
                </Bar>
 
           </>

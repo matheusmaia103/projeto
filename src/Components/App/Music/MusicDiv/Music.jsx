@@ -51,7 +51,7 @@ export default function Music({music}){
                 </div>
             </div>
             
-            <audio id = {music.id} src={music.preview}/>
+            <audio id = {music.id} src={music.preview} onPlay = { e => setPlaying(true)} onPause = {e => setPlaying(false)} onEnded = {e => setPlaying(false)}/>
             <Button/>
         </StyledMusic>
     )
