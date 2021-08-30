@@ -28,12 +28,14 @@ export default function ArtistList  ({artists, setQuery}){
         }
     }
 
+    
+
     return(
         <>
             <Header/>
                 <List>
                 {uniqueArtists.map(artist => (
-                    <Artist artist = {artist} key = {i++} setQuery = {setQuery}/>
+                    <Artist artist = {artist} key = {i++} setQuery = {setQuery} />
                 ))}
                 </List>
         </>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-const imageSize = '20vh';
+const imageSize = '130px';
 
 const StyledMusic = styled.li`
     background-color: ${props => props.theme.bgmusic};
@@ -12,7 +12,7 @@ const StyledMusic = styled.li`
     width: 90%!important;
     max-width: 800px;
     margin-top: 15px;
-    overflow: hidden;
+    overflow: auto!important;
 
 
     border-radius: 10px;
@@ -35,6 +35,8 @@ const StyledMusic = styled.li`
 
         max-width: ${imageSize};
         max-height: ${imageSize};
+
+        width: 25vw;
     }
 
     svg{
@@ -45,6 +47,7 @@ const StyledMusic = styled.li`
         margin-right: 30px;
 
         font-size: 60px;
+        width: 10%auto;
 
         *{
             pointer-events: none;
@@ -83,8 +86,9 @@ const StyledMusic = styled.li`
         }
         
         h2{
-            width: 100%!important;
+            width: 100%;
             margin: 0;
+            overflow-wrap: anywhere;
         }
     }
 

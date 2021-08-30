@@ -13,12 +13,11 @@ import GlobalStyle from './themes/GlobalStyles'
 export default function App() {
 
   
-  const [inputText, setInputText] = useState('circles');
+  const [inputText, setInputText] = useState('');
   const [query, setQuery] = useState('circles');
   const [musics, setMusics] = useState([]);
   const [artists, setArtists] = useState([]);
   //const [next, setNext] = useState('');
-  const [total, setTotal] = useState(0);
   
   //when form submits it changes the query
   const submitHandler = e => {
@@ -38,12 +37,7 @@ export default function App() {
   .then(response => response.json())
   .then(response => {
     setMusics(response.data)
-    setTotal(response.total)
-    console.log(response)
 
-    if(response.next){
-      //setNext(response.next);
-    }
   })
   .catch(err => {
     console.error(err);
@@ -131,9 +125,10 @@ export default function App() {
       </Header>
 
 
+    <p>Resultados para: '{query}'</p>
+
       <ArtistList artists = {artists} setQuery = {setQuery}/>
 
-      <p>{`${total} músicas encontradas`}</p>
 
       <List
         musics = {musics}

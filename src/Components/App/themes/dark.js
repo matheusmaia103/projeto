@@ -6,6 +6,7 @@ const dark ={
     bgmusic: '#151414',
     musicColor:'white',
     musicShadow: '-2px 4px 19px 1px #2a1f38e6',
+    bgdeg: '142'
 };
 
 export default dark;

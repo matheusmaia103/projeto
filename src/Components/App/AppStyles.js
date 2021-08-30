@@ -8,9 +8,9 @@ height: 100%!important;
 color: ${props => props.theme.color};
 background: ${props => props.theme.bgcolor};
 font-weight: bold;
-font-family: Poppins!important;
+font-family: 'Poppins'!important;
 margin-inline: auto;
-overflow:hidden;
+overflow:auto!important;
 
 display: flex;
 flex-direction: column;
@@ -21,7 +21,7 @@ align-items: center;
 const Header = styled.header`
 padding-top:40px;
 background: linear-gradient( 
-  71deg
+  ${props => props.theme.bgdeg}deg
   ,#b84fdd -7%,#4965f4 49%,#2efb74 119%);
   display: flex;
   flex-direction: column;

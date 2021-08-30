@@ -5,7 +5,6 @@ export default function Artist({artist, setQuery}){
         setQuery(artist.name);
     }
 
-
     return (
             <li>
                 <button onClick = {e => searchHandler()}>

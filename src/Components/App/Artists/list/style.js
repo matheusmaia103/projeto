@@ -36,6 +36,12 @@ const List = styled.ul`
         align-items:center;
         flex-wrap: wrap;
 
+
+        transition: 0.3s ease;
+        :hover{
+            transform: scale(1.03)
+        }
+
         img{
             margin-right: 10px;
             border: 2px solid transparent;
