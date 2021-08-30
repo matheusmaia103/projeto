@@ -27,7 +27,7 @@ export default function ArtistList  ({artists, setQuery}){
                 <p>{uniqueArtists.length} artista encontrado:</p>
             )
         }
-        if (uniqueArtists.lenth === 0) {
+        if (uniqueArtists.length === 0) {
             return('')
         }
     }
