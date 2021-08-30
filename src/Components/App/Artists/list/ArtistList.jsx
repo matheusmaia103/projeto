@@ -21,10 +21,14 @@ export default function ArtistList  ({artists, setQuery}){
             return (
                 <p>{uniqueArtists.length} artistas diferentes encontrados:</p>
             )
-        } else {
+        } 
+        if (uniqueArtists.length === 1) {
             return(
                 <p>{uniqueArtists.length} artista encontrado:</p>
             )
+        }
+        if (uniqueArtists.lenth === 0) {
+            return('')
         }
     }
 
