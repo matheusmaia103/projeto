@@ -27,6 +27,8 @@ export default function App() {
 
   //this functions searchs query at the API white useEffect
   const getLyrics = () =>{
+    setMusics([]);
+    setArtists([]);
     fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${query}`, {
   "method": "GET",
   "headers": {
