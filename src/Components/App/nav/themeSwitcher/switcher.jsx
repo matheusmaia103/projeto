@@ -15,7 +15,7 @@ export default function Switcher({themeToggler, theme}) {
         <ToggleSwitch
             checked = { checked }
             onChange = {e => changeHandler()}
-            onColor= {props => props.theme.bgcolor}
+            onColor= {'#44ce68'}
         />
     )
 }

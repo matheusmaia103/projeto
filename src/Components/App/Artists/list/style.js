@@ -4,7 +4,7 @@ const max = '70px';
 
 const List = styled.ul`
     border: 2px solid ${props => props.theme.artistborder};
-    border-radius: 5px;
+    border-radius: 20px;
 
     max-width: 900px;
     padding:10px;

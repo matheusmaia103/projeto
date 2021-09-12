@@ -28,6 +28,8 @@ export const Bar = styled.nav`
     right:0;
     left: 0;
 
+    z-index: 10;
+
     box-shadow: ${props => props.theme.navShadow};
 
     display: flex;

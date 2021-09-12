@@ -1,19 +1,21 @@
 import { StyledMusic } from './style';
 import {Play, Pause, WarningCircle} from 'phosphor-react';
-import {useState} from 'react';   
+import {useState, useRef, useEffect} from 'react';   
 
 
 export default function Music({music, setQuery}){
     const [playing, setPlaying] = useState(false);
+    const audioTag = useRef();
     
-    const handlePlay = e =>{
-        const Button = e.target;
-        const Music = Button.parentElement;
-        const audio = Music.querySelector('audio');
+    const handlePlay = e =>{   
+        const otherAudios = document.querySelectorAll('audio');
+        otherAudios.forEach(audio => {
+            audio.pause();
+        });
+             
+        const audio = audioTag.current;
+        console.log(audioTag);
 
-
-        console.log(audio.duration);
-        
         try{
             if(playing === 'error'){
                 return;
@@ -54,14 +56,15 @@ export default function Music({music, setQuery}){
     return (
         <StyledMusic>
             <div className="infos">
-                <img src={music.album.cover_medium} alt="img"/>
+                <img src={music.album.cover_big} alt="img"/>
                 <div className="credits">
                     <h2>{music.title}</h2>
                     <cite onClick={e => setQuery(music.artist.name)}>{music.artist.name}</cite>
                 </div>
             </div>
             
-            <audio id = {music.id} src={music.preview} onError = {e => setPlaying('error')} onPlay = { e => setPlaying(true)} onPause = {e => setPlaying(false)} onEnded = {e => setPlaying(false)}/>
+            <audio ref={audioTag} id = {music.id} src={music.preview} onError = {e => setPlaying('error')} onPlay = { e => setPlaying(true)} onPause = {e => setPlaying(false)} onEnded = {e => setPlaying(false)}/>
+            
             <Button/>
         </StyledMusic>
     )

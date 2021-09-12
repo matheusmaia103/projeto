@@ -10,9 +10,7 @@ import Nav from './nav/Nav';
 import GlobalStyle from './themes/GlobalStyles'
 
 
-export default function App() {
-
-  
+export default function App() { 
   const [inputText, setInputText] = useState('');
   const [query, setQuery] = useState('circles');
   const [musics, setMusics] = useState([]);

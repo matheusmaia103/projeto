@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 
-const imageSize = '130px';
+const maximageSize = '12vw';
+const minimageSize = '130px';
 
 const StyledMusic = styled.li`
     background-color: ${props => props.theme.bgmusic};
@@ -9,7 +10,7 @@ const StyledMusic = styled.li`
     font-weight: lighter;
     transition: 0.3s ease;
 
-    width: 90%!important;
+    width: 60vw!important;
     max-width: 800px;
     margin-top: 15px;
     overflow: auto!important;
@@ -23,7 +24,16 @@ const StyledMusic = styled.li`
     justify-content: space-between;
     align-items: center;
 
+    position: relative!important;
+    z-index: 1!important;
+
     box-sizing: border-box;
+
+    @media(max-width: 800px){
+        width: 95%!important;
+        max-width: 100%!important;
+
+    }
 
     .error{
         cursor: not-allowed;
@@ -33,10 +43,13 @@ const StyledMusic = styled.li`
     img{
         box-sizing: border-box;
 
-        max-width: ${imageSize};
-        max-height: ${imageSize};
+        max-width: ${maximageSize};
+        max-height: ${maximageSize};
 
-        width: 25vw;
+        min-width: ${minimageSize};
+        min-height: ${minimageSize};
+
+        width: 100%;
     }
 
     svg{
@@ -67,7 +80,9 @@ const StyledMusic = styled.li`
 
     .credits{        
         box-sizing: border-box;
-        max-height: ${imageSize};
+        max-height: ${maximageSize};
+        min-height: ${minimageSize};
+
 
         margin-left: 10px;
 
@@ -95,6 +110,8 @@ const StyledMusic = styled.li`
     :hover{
         transform: scale(1.05)
     }
+
+    
     `;
 
     export { StyledMusic };

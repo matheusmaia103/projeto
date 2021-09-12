@@ -60,7 +60,7 @@ const Form = styled.form`
   border: none;
   
   padding: 6px;
-  padding-left: 8px;
+  padding-left: 15px;
 
   width: 50vw;
   max-width: 450px;

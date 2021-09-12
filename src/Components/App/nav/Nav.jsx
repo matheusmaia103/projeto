@@ -9,8 +9,8 @@ export default function Nav ({themeToggler, theme}) {
          <>
                <Bar>
                     <Flex>
-                         <img src={logo} alt="" />
-                         {theme}
+                         <img src={logo} alt="logoimg" />
+                         Dreezer app
                     </Flex>
                     <Flex>
                          <Sun size={25}/>

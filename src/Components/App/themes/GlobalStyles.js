@@ -45,6 +45,12 @@ import { createGlobalStyle } from 'styled-components';
     svg{
         box-sizing: content-box;
     }
+
+    @media(max-width: 800px) {
+    .music{
+      width: 100%!important
+    }
+  }
 `;
 
 export default GlobalStyles;
