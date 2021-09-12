@@ -1,6 +1,6 @@
 import { StyledMusic } from './style';
 import {Play, Pause, WarningCircle} from 'phosphor-react';
-import {useState, useRef, useEffect} from 'react';   
+import {useState, useRef} from 'react';   
 
 
 export default function Music({music, setQuery}){
